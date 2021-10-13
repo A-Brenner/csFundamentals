@@ -9,48 +9,48 @@ namespace GradeBook
         // **** Constructors **** //
         public Book()
         {
-            grades = new List<double>();
+            Grades = new List<double>();
         }
 
         public Book(string name)
         {
-            grades = new List<double>();
-            this.name = name;
+            Grades = new List<double>();
+            Name = name;
         }
 
         public Book(List<double> listOfGrades)
         {
-            grades = listOfGrades;
+            Grades = listOfGrades;
         }
 
         // **** Fields ****
-        private List<double> grades;
-        private string name;
+        public List<double> Grades;
+        public string Name;
 
         // **** Methods ****
         public void AddGrade(double grade)
         {
             if (grade >= 0 && grade <= 100)
             {
-                grades.Add(grade);
+                Grades.Add(grade);
             }
         }
 
         public double AvgGrade()
         {
             double avg = 0.0;
-            foreach (double grade in grades)
+            foreach (double grade in Grades)
             {
                 avg += grade;
             }
-            avg /= grades.Count;
+            avg /= Grades.Count;
             return avg;
         }
 
         public double MaxGrade()
         {
             double currentMax = double.MinValue;
-            foreach (double grade in grades)
+            foreach (double grade in Grades)
             {
                 currentMax = Math.Max(currentMax, grade);
             }
@@ -60,7 +60,7 @@ namespace GradeBook
         public double MinGrade()
         {
             double currentMin = double.MaxValue;
-            foreach (double grade in grades)
+            foreach (double grade in Grades)
             {
                 currentMin = Math.Min(currentMin, grade);
             }
@@ -78,7 +78,7 @@ namespace GradeBook
 
         public string GetName()
         {
-            return name;
+            return Name;
         }
 
 

@@ -8,7 +8,7 @@ namespace GradeBook.tests
         [Fact]
 
 
-        public void Test1()
+        public void BookCalculatesGradeStats()
         {
             //arrange
             var book = new Book();
